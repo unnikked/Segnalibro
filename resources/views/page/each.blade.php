@@ -1,0 +1,1 @@
+<a href="{{ route('page.show', $page->id) }}" class="list-group-item">{{ empty($page->title) ? $page->url : $page->title }}<span class="pull-right text-muted">{{ $page->created_at->diffForHumans() }}</span></a>
