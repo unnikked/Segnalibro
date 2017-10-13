@@ -20,3 +20,5 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('page', 'PageController')->middleware('auth');
+
+Route::get('/export', 'ExportController')->name('export')->middleware('auth');
