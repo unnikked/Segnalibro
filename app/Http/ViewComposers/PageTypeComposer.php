@@ -12,7 +12,7 @@ class PageTypeComposer
 {
   protected $user;
 
-  function __construct(User $user)
+  function __construct(?User $user)
   {
     $this->user = $user;
   }
