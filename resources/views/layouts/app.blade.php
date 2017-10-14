@@ -56,7 +56,19 @@
         <div class="collapse navbar-collapse" id="app-navbar-collapse">
           <!-- Left Side Of Navbar -->
           <ul class="nav navbar-nav">
+            @auth
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                  Types <span class="caret"></span>
+                </a>
 
+                <ul class="dropdown-menu" role="menu">
+                  @foreach ($types as $element)
+                    <li><a href="{{ route('type', $element->type)}}">{{$element->type}}</a></li>
+                  @endforeach
+                </ul>
+              </li>
+            @endauth
           </ul>
 
           <!-- Right Side Of Navbar -->

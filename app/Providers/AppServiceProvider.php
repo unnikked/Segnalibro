@@ -3,6 +3,8 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\View;
+
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -32,5 +34,13 @@ class AppServiceProvider extends ServiceProvider
         ]
       ]);
     });
+
+    $this->app->when(\App\Http\ViewComposers\PageTypeComposer::class)
+      ->needs(\App\User::class)
+      ->give(function () {
+        return \Auth::user();
+      });
+
+    View::composer('layouts.app', \App\Http\ViewComposers\PageTypeComposer::class);
   }
 }
