@@ -4,11 +4,13 @@
 
 Save and comment your preferite links from the web. It's just a bookmarking application.
 
-Built with Laravel 5.5
+Built with Laravel 5.5 - [Screenshots](https://imgur.com/a/G2fO5)
 
 # Documentation
 
 ### Install
+
+Supports only PHP 7.1
 
 ```
 git clone https://github.com/unnikked/Segnalibro.git
