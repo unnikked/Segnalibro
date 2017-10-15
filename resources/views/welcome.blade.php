@@ -5,7 +5,7 @@
     <div class="row">
       <div class="jumbotron">
         <h1>Segnalibro</h1>
-        <p class="lead">Save and comment your preferite links from the web. It's just a bookmarking application.</p>
+        <p class="lead">Save and comment your favorite links from the web. It's just a bookmarking application.</p>
         <p><a class="btn btn-lg btn-success" href="/register" role="button">Register</a></p>
       </div>
     </div>

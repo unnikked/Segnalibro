@@ -2,7 +2,7 @@
 
 <p align="center"><img src="public/apple-icon.png"/></p>
 
-Save and comment your preferite links from the web. It's just a bookmarking application.
+Save and comment your favorite links from the web. It's just a bookmarking application.
 
 Built with Laravel 5.5 - [Screenshots](https://imgur.com/a/G2fO5)
 
