@@ -3,7 +3,7 @@
 @section('content')
   @component('components.layout.base')
     @slot('title')
-      {{ empty($page->title) ? $page->url : $page->title }} <span class="pull-right">
+      <img class="img-circle" src="https://{{ parse_url($page->url, PHP_URL_HOST) }}/favicon.ico" width="16" /> {{ empty($page->title) ? $page->url : $page->title }} <span class="pull-right">
         <div class="btn-group">
           <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Actions <span class="caret"></span>
