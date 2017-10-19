@@ -18,3 +18,9 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::post('/save', 'SaveController')->middleware('auth.basic');
+
+Route::middleware('auth:api')->group(function () {
+  Route::get('/me', 'ApiUserController');
+  Route::apiResource('page', 'ApiPageController');
+  Route::apiResource('page.comment', 'ApiCommentController');
+});
