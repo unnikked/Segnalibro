@@ -9,6 +9,7 @@
         "essence/essence": "^3.5",
         "fideloper/proxy": "~3.3",
         "laravel/framework": "5.5.*",
+        "laravel/passport": "^4.0",
         "laravel/tinker": "~1.0"
     },
     "require-dev": {
