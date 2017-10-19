@@ -24,3 +24,5 @@ Route::resource('page.comment', 'CommentController')->middleware('auth');
 Route::get('/type/{type}', 'TypeController')->name('type')->middleware('auth');
 
 Route::get('/export', 'ExportController')->name('export')->middleware('auth');
+
+Route::view('/passport', 'passport.index')->name('passport.index');
