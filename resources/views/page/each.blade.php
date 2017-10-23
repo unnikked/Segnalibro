@@ -1,5 +1,5 @@
 <li class="list-group-item">
-  <a href="{{ route('page.show', $page->id) }}"  >
+  <a href="{{ route('page.show', $page->id) }}" class="text-muted" >
   <div class="container-fluid">
     <div class="row">
       <div class="col-xs-1">
