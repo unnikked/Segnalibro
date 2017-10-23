@@ -20,7 +20,11 @@ class PageTypeComposer
   public function compose(View $view)
   {
     if ($this->user) {
-      $view->with('types', $this->user->pages()->groupBy('type')->get(['type']));
+      $view->with('types', $this->user->pages()
+        ->groupBy('type')
+        ->where('type', '<>', '')
+        ->get(['type'])
+      );
     }
   }
 }
