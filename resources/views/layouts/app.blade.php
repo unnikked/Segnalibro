@@ -70,6 +70,18 @@
                   @endforeach
                 </ul>
               </li>
+
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                  Tags <span class="caret"></span>
+                </a>
+
+                <ul class="dropdown-menu" role="menu">
+                  @foreach ($tags as $tag)
+                    <li><a href="{{ route('tag.show', $tag->id)}}">{{ $tag->name }}</a></li>
+                  @endforeach
+                </ul>
+              </li>
             @endauth
           </ul>
 

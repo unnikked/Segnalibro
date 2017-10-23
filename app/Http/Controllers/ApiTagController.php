@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Comment;
+use App\Tag;
 use App\Page;
 use Illuminate\Http\Request;
-use App\Http\Resources\Comment as CommentResource;
+use App\Http\Resources\Tag as TagResource;
 
-class ApiCommentController extends Controller
+class ApiTagController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,11 +16,11 @@ class ApiCommentController extends Controller
      */
     public function index(Request $request, Page $page)
     {
-      return CommentResource::collection(
+      return TagResource::collection(
         $request->user()
           ->pages()
           ->findOrFail($page->id)
-          ->comments()
+          ->tags()
           ->paginate()
       );
     }
@@ -33,8 +33,8 @@ class ApiCommentController extends Controller
      */
     public function store(Request $request, Page $page)
     {
-      return new CommentResource($request->user()->pages()->findOrFail($page->id)
-        ->comments()->create($this->validate($request, [
+      return new TagResource($request->user()->pages()->findOrFail($page->id)
+        ->tags()->create($this->validate($request, [
         'text' => 'required'
       ])));
     }
@@ -45,12 +45,12 @@ class ApiCommentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Request $request, Page $page, Comment $comment)
+    public function show(Request $request, Page $page, Tag $tag)
     {
-      return new CommentResource(
+      return new TagResource(
         $request->user()
         ->pages()->findOrFail($page->id)
-        ->comments()->findOrFail($comment->id)
+        ->tags()->findOrFail($tag->id)
       );
     }
 
@@ -61,10 +61,10 @@ class ApiCommentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Page $page, Comment $comment)
+    public function update(Request $request, Page $page, Tag $tag)
     {
       return ['data' => ['success' => $request->user()->pages()->findOrFail($page->id)
-        ->comments()->findOrFail($comment->id)
+        ->tags()->findOrFail($tag->id)
         ->update($this->validate($request, [
         'text' => 'required'
       ]))]];
@@ -76,10 +76,10 @@ class ApiCommentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Request $request, Page $page, Comment $comment)
+    public function destroy(Request $request, Page $page, Tag $tag)
     {
       return ['data' => ['success' => $request->user()->pages()->findOrFail($page->id)
-        ->comments()->findOrFail($comment->id)
+        ->tags()->findOrFail($tag->id)
         ->delete()
       ]];
     }
