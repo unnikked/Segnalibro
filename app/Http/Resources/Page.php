@@ -4,6 +4,7 @@ namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\Resource;
 use App\Http\Resources\Comment as CommentResource;
+use App\Http\Resources\Tag as TagResource;
 
 class Page extends Resource
 {
@@ -34,6 +35,7 @@ class Page extends Resource
       'width' => $this->width,
       'height' => $this->height,
       'comments' => CommentResource::collection($this->whenLoaded('comments')),
+      'comments' => TagResource::collection($this->whenLoaded('tags')),
       'created_at' => $this->created_at->toDateTimeString(),
       'updated_at' => $this->updated_at->toDateTimeString(),
     ];
