@@ -16,7 +16,7 @@ class PageController extends Controller
   public function index(Request $request)
   {
     return view('page.index', [
-      'pages' => $request->user()->pages()->paginate()
+      'pages' => $request->user()->pages()->orderBy('created_at', 'DESC')->paginate()
     ]);
   }
 
