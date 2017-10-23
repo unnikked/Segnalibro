@@ -101,6 +101,13 @@
 
     @component('components.layout.base')
       @slot('title')
+        Tags <span class="pull-right"><a href="{{ route('page.tag.create', $page->id) }}" class="btn btn-default btn-xs">Add Tags</a></span>
+      @endslot
+      @each('page.tag.each', $page->tags, 'tag', 'shared.empty')
+    @endcomponent
+
+    @component('components.layout.base')
+      @slot('title')
         Comments <span class="pull-right"><a href="{{ route('page.comment.create', $page->id)}}" class="btn btn-default btn-xs">New</a></span>
       @endslot
       @each('page.comment.each', $page->comments, 'comment', 'shared.empty')

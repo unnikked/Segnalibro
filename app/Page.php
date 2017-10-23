@@ -27,4 +27,9 @@ class Page extends Model
   {
     return $this->hasMany(\App\Comment::class);
   }
+
+  public function tags()
+  {
+    return $this->belongsToMany(\App\Tag::class);
+  }
 }

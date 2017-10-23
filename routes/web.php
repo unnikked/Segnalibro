@@ -21,6 +21,10 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('page', 'PageController')->middleware('auth');
 Route::resource('page.comment', 'CommentController')->middleware('auth');
+Route::resource('page.tag', 'TagController');
+Route::get('/tag/{tag}', 'TagController@show')->name('tag.show');
+
+
 Route::get('/type/{type}', 'TypeController')->name('type')->middleware('auth');
 
 Route::get('/export', 'ExportController')->name('export')->middleware('auth');

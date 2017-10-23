@@ -31,6 +31,8 @@
   <!-- Styles -->
   <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
+  @stack('javascript')
+
   @stack('custom-css')
 </head>
 <body>
@@ -111,5 +113,7 @@
 
 <!-- Scripts -->
 <script src="{{ asset('js/app.js') }}"></script>
+
+@stack('javascript-bottom')
 </body>
 </html>
