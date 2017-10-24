@@ -15,7 +15,7 @@ class DocController extends Controller
   */
   public function index()
   {
-    return view('doc.index')->withFiles(Storage::disk('public')->files('docs'));
+    return view('doc.index')->withFiles(Storage::disk('doc')->files('/'));
   }
 
   /**
@@ -48,7 +48,7 @@ class DocController extends Controller
   public function show(Request $request, Parsedown $parsedown, $id)
   {
     return view('doc.show', [
-      'doc' => $parsedown->text(Storage::disk('public')->get('docs/' . $id . '.md'))
+      'doc' => $parsedown->text(Storage::disk('doc')->get($id . '.md'))
     ]);
   }
 

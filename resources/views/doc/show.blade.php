@@ -8,3 +8,11 @@
     {!! $doc !!}
   @endcomponent
 @endsection
+
+@push('javascript')
+  <script type="text/javascript">
+    window.onload = function () {
+      document.querySelectorAll('img').forEach((img) => img.className = 'img-responsive');
+    }
+  </script>
+@endpush
