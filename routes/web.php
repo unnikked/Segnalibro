@@ -19,8 +19,8 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/doc', 'DocController@index')->middleware('auth');
-Route::get('/doc/{id}', 'DocController@show')->middleware('auth');
+Route::get('/docs', 'DocController@index')->middleware('auth');
+Route::get('/docs/{id}', 'DocController@show')->middleware('auth');
 
 Route::resource('page', 'PageController')->middleware('auth');
 Route::resource('page.comment', 'CommentController')->middleware('auth');
