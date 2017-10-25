@@ -38,4 +38,9 @@ class User extends Authenticatable
     {
       return $this->hasMany(\App\Tag::class);
     }
+
+    public function comments()
+    {
+      return $this->hasManyThrough(\App\Comment::class, \App\Page::class);
+    }
 }

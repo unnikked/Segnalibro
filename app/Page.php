@@ -3,9 +3,12 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Laravel\Scout\Searchable;
 
 class Page extends Model
 {
+  use Searchable;
+
   /**
    * The attributes that are mass assignable.
    *
@@ -32,4 +35,18 @@ class Page extends Model
   {
     return $this->belongsToMany(\App\Tag::class);
   }
+
+  /**
+     * Get the indexable data array for the model.
+     *
+     * @return array
+     */
+    public function toSearchableArray()
+    {
+      $array = $this->toArray();
+
+      // Customize array...
+
+      return $array;
+    }
 }

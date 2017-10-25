@@ -6,7 +6,7 @@
 
       @component('components.form.base')
         @slot('route')
-          {{ route('page.search') }}
+          {{ route('comment.search') }}
         @endslot
 
         <div class="input-group">
@@ -22,12 +22,12 @@
   <br>
   @component('components.layout.base')
     @slot('title')
-      Saved pages <span class="pull-right"><a href="{{ route('page.create') }}" class="btn btn-default btn-xs">New</a></span>
+      All comments
     @endslot
     <div class="list-group">
-      @each('page.each', $pages, 'page', 'shared.empty')
+      @each('page.comment.each', $comments, 'comment', 'shared.empty')
     </div>
 
-    {!! $pages->links() !!}
+    {!! $comments->links() !!}
   @endcomponent
 @endsection

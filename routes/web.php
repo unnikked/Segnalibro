@@ -24,8 +24,12 @@ Route::get('/docs/{id}', 'DocController@show')->middleware('auth');
 
 Route::resource('page', 'PageController')->middleware('auth');
 Route::resource('page.comment', 'CommentController')->middleware('auth');
+Route::get('/comments', 'CommentController@index')->middleware('auth');
+Route::post('/comments/search', 'CommentSearchController')->middleware('auth')->name('comment.search');
 Route::resource('page.tag', 'TagController');
 Route::get('/tag/{tag}', 'TagController@show')->name('tag.show');
+
+Route::post('/page/search', 'PageSearchController')->name('page.search');
 
 
 Route::get('/type/{type}', 'TypeController')->name('type')->middleware('auth');
