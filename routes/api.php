@@ -25,5 +25,5 @@ Route::middleware('auth:api')->group(function () {
   Route::apiResource('page.comment', 'CommentController');
   Route::resource('page.tag', 'TagController');
 
-  Route::post('/page/search', 'PageSearchController')
+  Route::post('/page/search', 'PageSearchController');
 });
