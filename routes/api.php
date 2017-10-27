@@ -23,6 +23,7 @@ Route::middleware('auth:api')->group(function () {
   Route::get('/me', 'UserController');
   Route::apiResource('page', 'PageController');
   Route::apiResource('page.comment', 'CommentController');
+  Route::resource('page.tag', 'TagController');
 
   Route::post('/page/search', 'PageSearchController')
 });
