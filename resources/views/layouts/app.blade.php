@@ -70,6 +70,10 @@
                   @endforeach
                 </ul>
               </li>
+
+              <li>
+                <a href="{{ route('comments')}}">Comments</a>
+              </li>
             @endauth
           </ul>
 

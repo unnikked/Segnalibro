@@ -23,7 +23,8 @@ Route::middleware(['auth'])->group(function () {
   Route::resource('page', 'PageController');
 
   Route::resource('page.comment', 'CommentController');
-  Route::get('/comments', 'CommentController@index');
+  Route::get('/comments', 'CommentController@index')
+    ->name('comments');
 
   Route::resource('page.tag', 'TagController');
   Route::get('/tag/{tag}', 'TagController@show')
