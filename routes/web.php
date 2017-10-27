@@ -24,8 +24,6 @@ Route::middleware(['auth'])->group(function () {
 
   Route::resource('page.comment', 'CommentController');
   Route::get('/comments', 'CommentController@index');
-  Route::post('/comments/search', 'CommentSearchController')
-    ->name('comment.search');
 
   Route::resource('page.tag', 'TagController');
   Route::get('/tag/{tag}', 'TagController@show')
