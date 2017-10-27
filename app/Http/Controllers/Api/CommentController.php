@@ -1,13 +1,14 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api;
 
 use App\Comment;
 use App\Page;
 use Illuminate\Http\Request;
 use App\Http\Resources\Comment as CommentResource;
+use App\Http\Controllers\Controller;
 
-class ApiCommentController extends Controller
+class CommentController extends Controller
 {
     /**
      * Display a listing of the resource.

@@ -1,13 +1,14 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api;
 
 use App\Tag;
 use App\Page;
 use Illuminate\Http\Request;
 use App\Http\Resources\Tag as TagResource;
+use App\Http\Controllers\Controller;
 
-class ApiTagController extends Controller
+class TagController extends Controller
 {
     /**
      * Display a listing of the resource.

@@ -1,13 +1,14 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api;
 
 use App\Http\Resources\Page as PageResource;
 use App\Page;
 use Essence\Essence;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
-class ApiPageController extends Controller
+class PageController extends Controller
 {
   /**
   * Display a listing of the resource.
