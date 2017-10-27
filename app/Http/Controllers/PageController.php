@@ -44,7 +44,11 @@ class PageController extends Controller
 
     $attributes = $essence->extract($request->url);
 
-    abort_if(is_null($attributes), 500);
+    if(is_null($attributes)) {
+      $request->user()->pages()->create($request->url);
+      
+      return redirect()->route('page.index');
+    }
 
     $request->user()->pages()->create($attributes->properties());
 
