@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Api;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Page;
+use App\Http\Resources\Page as PageResource;
+
 
 class SearchController extends Controller
 {
@@ -17,8 +19,8 @@ class SearchController extends Controller
     $query = $request->get('query');
     $id = $request->user()->id;
 
-    return view('page.index')->with([
-      'pages' => Page::search($query)->where('user_id', $id)->paginate()
-    ]);
+    $result = Page::search($query)->where('user_id', $id)->paginate();
+
+    return PageResource::collection($result);
   }
 }
