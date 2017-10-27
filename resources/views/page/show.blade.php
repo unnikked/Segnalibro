@@ -128,12 +128,15 @@
         Tags <span class="pull-right"><a href="{{ route('page.tag.create', $page->id) }}" class="btn btn-default btn-xs">Add Tags</a></span>
       @endslot
       @each('page.tag.each', $page->tags, 'tag', 'shared.empty')
-    @endcomponent
 
-    @component('components.layout.base')
-      @slot('title')
-        Comments <span class="pull-right"><a href="{{ route('page.comment.create', $page->id)}}" class="btn btn-default btn-xs">New</a></span>
-      @endslot
-      @each('page.comment.each', $page->comments, 'comment', 'shared.empty')
     @endcomponent
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+        <div class="panel panel-default">
+          <div class="panel-body">Comments <span class="pull-right"><a href="{{ route('page.comment.create', $page->id) }}" class="btn btn-default btn-xs">New</a></span></div>
+        </div>
+        @each('page.comment.each', $page->comments, 'comment', 'shared.empty')
+
+      </div>
+    </div>
   @endsection
