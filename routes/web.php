@@ -31,9 +31,6 @@ Route::get('/tag/{tag}', 'TagController@show')->name('tag.show');
 
 Route::post('/page/search', 'PageSearchController')->name('page.search');
 
-
-Route::get('/type/{type}', 'TypeController')->name('type')->middleware('auth');
-
 Route::get('/export', 'ExportController')->name('export')->middleware('auth');
 
 Route::view('/passport', 'passport.index')->name('passport.index');

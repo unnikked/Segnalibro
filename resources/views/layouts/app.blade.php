@@ -61,18 +61,6 @@
             @auth
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                  Types <span class="caret"></span>
-                </a>
-
-                <ul class="dropdown-menu" role="menu">
-                  @foreach ($types as $element)
-                    <li><a href="{{ route('type', $element->type)}}">{{$element->type}}</a></li>
-                  @endforeach
-                </ul>
-              </li>
-
-              <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                   Tags <span class="caret"></span>
                 </a>
 

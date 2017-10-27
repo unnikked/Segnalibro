@@ -38,20 +38,12 @@ class AppServiceProvider extends ServiceProvider
       ]);
     });
 
-    $this->app->when(\App\Http\ViewComposers\PageTypeComposer::class)
-      ->needs(\App\User::class)
-      ->give(function () {
-        return \Auth::user();
-      });
-
-    View::composer('layouts.app', \App\Http\ViewComposers\PageTypeComposer::class);
-
     $this->app->when(\App\Http\ViewComposers\TagComposer::class)
     ->needs(\App\User::class)
     ->give(function () {
       return \Auth::user();
     });
-    
+
     View::composer('layouts.app', \App\Http\ViewComposers\TagComposer::class);
   }
 }
