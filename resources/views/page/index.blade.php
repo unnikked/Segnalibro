@@ -28,6 +28,8 @@
       @each('page.each', $pages, 'page', 'shared.empty')
     </div>
 
-    {!! $pages->links() !!}
+    @if (method_exists($pages, 'links'))
+      {!! $pages->links() !!}
+    @endif
   @endcomponent
 @endsection

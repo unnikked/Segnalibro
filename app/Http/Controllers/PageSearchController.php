@@ -17,7 +17,7 @@ class PageSearchController extends Controller
     $id = $request->user()->id;
 
     return view('page.index')->with([
-      'pages' => Page::search($query)->where('user_id', $id)->paginate()
+      'pages' => Page::search($query)->where('user_id', $id)->get()
     ]);
   }
 }
