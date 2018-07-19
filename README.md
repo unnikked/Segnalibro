@@ -4,7 +4,7 @@
 
 Save and comment your favorite links from the web. It's just a bookmarking application.
 
-Built with Laravel 5.5 - [Screenshots](https://imgur.com/a/G2fO5)
+Built with Laravel 5.6 - [Screenshots](https://imgur.com/a/G2fO5)
 
 # Documentation
 
